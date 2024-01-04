@@ -16,9 +16,9 @@
     "extract_dir": "PFiles\\Modrinth App",
     "pre_install": [
         "@\"",
-        "[Environment]::SetEnvironmentVariable(\"THESEUS_CONFIG_DIR\", \"$persist_dir\\data\", [System.EnvironmentVariableTarget]::Process)",
-        "Start-Process -FilePath \"$dir\\Modrinth App.exe\"",
-        "\"@ | Out-File -FilePath \"$dir\\StartApp.ps1\" -Encoding UTF8"
+        "SET THESEUS_CONFIG_DIR=$persist_dir\\data",
+        "START \"\" /b App\\ModrinthApp.exe",
+        "\"@ | Out-File -FilePath \"$dir\\start.bat\" -Encoding UTF8"
     ],
     "persist": "data",
     "checkver": {
@@ -35,7 +35,7 @@
     },
     "shortcuts": [
         [
-            "StartApp.ps1",
+            "start.bat",
             "Modrinth App",
             "null",
             "Modrinth App.exe"
