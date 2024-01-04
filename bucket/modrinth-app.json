@@ -16,7 +16,7 @@
     "extract_dir": "PFiles\\Modrinth App",
     "pre_install": [
         "@\"",
-        "SET THESEUS_CONFIG_DIR=$dir\\data",
+        "SET THESEUS_CONFIG_DIR=$persist_dir\\data",
         "START \"\" /b \"$dir\\Modrinth App.exe\"",
         "\"@ | Out-File -FilePath \"$dir\\start.bat\" -Encoding ascii"
     ],
