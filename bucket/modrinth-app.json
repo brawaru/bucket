@@ -10,7 +10,7 @@
     "architecture": {
         "64bit": {
             "url": "https://launcher-files.modrinth.com/versions/0.6.3/windows/Modrinth%20App_0.6.3_x64_en-US.msi",
-            "hash": "846a18e148047c2b77dcfe1df89dd624462eb8559b3d587f8134402b49c9ccf1"
+            "hash": "0893966473603deecbbfc6afa54aff221c12442840506bdbe7b99e688e27fac9"
         }
     },
     "extract_dir": "PFiles\\Modrinth App",
@@ -20,9 +20,7 @@
         "Start-Process -FilePath \"$dir\\Modrinth App.exe\"",
         "\"@ | Out-File -FilePath \"StartApp.ps1\" -Encoding UTF8"
     ],
-    "persist": [
-        "data"
-    ],
+    "persist": "data",
     "checkver": {
         "url": "https://launcher-files.modrinth.com/updates.json",
         "jsonpath": "$.platforms[\"windows-x86_64\"].install_urls[0]",
