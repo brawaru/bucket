@@ -14,9 +14,9 @@
         }
     },
     "extract_dir": "PFiles\\Modrinth App",
-    "post_install": [
+    "pre_install": [
         "@\"",
-        "[Environment]::SetEnvironmentVariable(\"THESEUS_CONFIG_DIR\", \"$persist_dir\\data\\\", [System.EnvironmentVariableTarget]::Process)",
+        "[Environment]::SetEnvironmentVariable(\"THESEUS_CONFIG_DIR\", \"$persist_dir\\data\", [System.EnvironmentVariableTarget]::Process)",
         "Start-Process -FilePath \"$dir\\Modrinth App.exe\"",
         "\"@ | Out-File -FilePath \"$dir\\StartApp.ps1\" -Encoding UTF8"
     ],
