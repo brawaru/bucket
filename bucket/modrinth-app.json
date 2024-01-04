@@ -9,8 +9,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": ["https://launcher-files.modrinth.com/versions/$version/windows/Modrinth%20App_$version_x64_en-US.msi"],
-            "hash": "846a18e148047c2b77dcfe1df89dd624462eb8559b3d587f8134402b49c9ccf1"
+            "url": [
+                "https://launcher-files.modrinth.com/versions/$version/windows/Modrinth%20App_$version_x64_en-US.msi"
+            ],
+            "hash": [
+                "846a18e148047c2b77dcfe1df89dd624462eb8559b3d587f8134402b49c9ccf1"
+            ]
         }
     },
     "extract_dir": "SourceDir\\PFiles\\Modrinth App",
