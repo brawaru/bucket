@@ -18,7 +18,7 @@
         "@\"",
         "SET THESEUS_CONFIG_DIR=$dir\\data",
         "START \"\" /b \"$dir\\Modrinth App.exe\"",
-        "\"@ | Out-File -FilePath \"$dir\\start.bat\" -Encoding UTF8"
+        "\"@ | Out-File -FilePath \"$dir\\start.bat\" -Encoding ascii"
     ],
     "persist": "data",
     "checkver": {
