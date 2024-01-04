@@ -18,7 +18,7 @@
         "@\"",
         "[Environment]::SetEnvironmentVariable(\"THESEUS_CONFIG_DIR\", \"$persist_dir\\data\\\", [System.EnvironmentVariableTarget]::Process)",
         "Start-Process -FilePath \"$dir\\Modrinth App.exe\"",
-        "\"@ | Out-File -FilePath \"StartApp.ps1\" -Encoding UTF8"
+        "\"@ | Out-File -FilePath \"$dir\\StartApp.ps1\" -Encoding UTF8"
     ],
     "persist": "data",
     "checkver": {
