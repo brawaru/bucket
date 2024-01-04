@@ -1,0 +1,46 @@
+{
+    "##": "This file is a template. Fill the blanks and add or remove fields as necessary.",
+    "version": "0.6.3",
+    "description": "Modded Minecraft Launcher",
+    "homepage": "https://modrinth.com/app",
+    "license": {
+        "identifier": "GPL-3.0-only",
+        "url": "https://raw.githubusercontent.com/modrinth/theseus/f6a697780ba45df606d4535205ac4532f87fbc3c/LICENSE"
+    },
+    "architecture": {
+        "64bit": {
+            "url": ["https://launcher-files.modrinth.com/versions/$version/windows/Modrinth%20App_$version_x64_en-US.msi"],
+            "hash": "846a18e148047c2b77dcfe1df89dd624462eb8559b3d587f8134402b49c9ccf1"
+        }
+    },
+    "extract_dir": "SourceDir\\PFiles\\Modrinth App",
+    "post_install": [
+        "@\"",
+        "[Environment]::SetEnvironmentVariable(\"THESEUS_CONFIG_DIR\", \"$persist_dir\\data\\\", [System.EnvironmentVariableTarget]::Process)",
+        "Start-Process -FilePath \"$dir\\Modrinth App.exe\"",
+        "\"@ | Out-File -FilePath \"StartApp.ps1\" -Encoding UTF8"
+    ],
+    "persist": [
+        "data"
+    ],
+    "checkver": {
+        "url": "https://launcher-files.modrinth.com/updates.json",
+        "jsonpath": "$.platforms[\"windows-x86_64\"].install_urls[0]",
+        "regex": "Modrinth%20App_(\\d+\\.\\d+(\\.\\d+)?)_x64_en-US.msi"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://launcher-files.modrinth.com/versions/$version/windows/Modrinth%20App_$version_x64_en-US.msi"
+            }
+        }
+    },
+    "shortcuts": [
+        [
+            "StartApp.ps1",
+            "Modrinth App",
+            "null",
+            "Modrinth App.exe"
+        ]
+    ]
+}
