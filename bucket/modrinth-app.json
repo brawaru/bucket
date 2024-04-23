@@ -23,7 +23,7 @@
     "persist": "data",
     "checkver": {
         "url": "https://launcher-files.modrinth.com/updates.json",
-        "jsonpath": "$.platforms[\"windows-x86_64\"].install_urls[0]",
+        "jsonpath": "$.platforms.windows-x86_64.install_urls[0]",
         "regex": "Modrinth%20App_(\\d+\\.\\d+(\\.\\d+)?)_x64_en-US.msi"
     },
     "autoupdate": {
