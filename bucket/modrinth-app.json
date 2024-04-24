@@ -1,6 +1,6 @@
 {
     "##": "This file is a template. Fill the blanks and add or remove fields as necessary.",
-    "version": "0.6.3",
+    "version": "0.7.1",
     "description": "Modded Minecraft Launcher",
     "homepage": "https://modrinth.com/app",
     "license": {
@@ -9,8 +9,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://launcher-files.modrinth.com/versions/0.6.3/windows/Modrinth%20App_0.6.3_x64_en-US.msi",
-            "hash": "0893966473603deecbbfc6afa54aff221c12442840506bdbe7b99e688e27fac9"
+            "url": "https://launcher-files.modrinth.com/versions/0.7.1/windows/Modrinth%20App_0.7.1_x64_en-US.msi",
+            "hash": "b1ac36000cee14b9c36aea4cef7f53ed2e7c18c9534b4ff66f07da11e8c07b59"
         }
     },
     "extract_dir": "PFiles\\Modrinth App",
