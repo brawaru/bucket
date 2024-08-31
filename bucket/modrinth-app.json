@@ -1,5 +1,4 @@
 {
-    "##": "This file is a template. Fill the blanks and add or remove fields as necessary.",
     "version": "0.8.2",
     "description": "Modded Minecraft Launcher",
     "homepage": "https://modrinth.com/app",
@@ -9,27 +8,29 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://launcher-files.modrinth.com/versions/0.8.2/windows/Modrinth%20App_0.8.2_x64_en-US.msi",
-            "hash": "7f53e2ab0a084d0103ac4bb1dded779d595691489c5004eb166ec54a2ce4a3f1"
+            "url": "https://launcher-files.modrinth.com/versions/0.8.5/windows/Modrinth%20App_0.8.5_x64-setup.exe",
+            "hash": "c1fb3c111d1e918409e8bea3adeb283b19c66fdff08e84c32f64a86e1ddb4713"
         }
     },
-    "extract_dir": "PFiles\\Modrinth App",
+    "extract_to": "extract",
     "pre_install": [
+        "Move-Item -Path \"$dir\\extract\\theseus_gui.exe\" -Destination \"$dir\\theseus_gui.exe\"",
+        "Remove-Item -Path \"$dir\\extract\" -Recurse -Force",
         "@\"",
         "SET THESEUS_CONFIG_DIR=$persist_dir\\data",
-        "START \"\" /b \"$dir\\Modrinth App.exe\"",
+        "START \"\" /b \"$dir\\theseus_gui.exe\"",
         "\"@ | Out-File -FilePath \"$dir\\start.bat\" -Encoding ascii"
     ],
     "persist": "data",
     "checkver": {
         "url": "https://launcher-files.modrinth.com/updates.json",
         "jsonpath": "$.platforms.windows-x86_64.install_urls[0]",
-        "regex": "Modrinth%20App_(\\d+\\.\\d+(\\.\\d+)?)_x64_en-US.msi"
+        "regex": "Modrinth%20App_(\\d+\\.\\d+(\\.\\d+)?)_x64_setup.exe"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://launcher-files.modrinth.com/versions/$version/windows/Modrinth%20App_$version_x64_en-US.msi"
+                "url": "https://launcher-files.modrinth.com/versions/0.8.5/windows/Modrinth%20App_$version_x64-setup.exe"
             }
         }
     },
