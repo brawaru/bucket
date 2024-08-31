@@ -21,8 +21,6 @@
         "args": "/S"
     },
     "pre_install": [
-        "Move-Item -Path \"$dir\\extract\\theseus_gui.exe\" -Destination \"$dir\\theseus_gui.exe\"",
-        "Remove-Item -Path \"$dir\\extract\" -Recurse -Force",
         "@\"",
         "SET THESEUS_CONFIG_DIR=$persist_dir\\data",
         "START \"\" /b \"$dir\\theseus_gui.exe\"",
