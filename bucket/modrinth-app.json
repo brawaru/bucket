@@ -12,7 +12,14 @@
             "hash": "c1fb3c111d1e918409e8bea3adeb283b19c66fdff08e84c32f64a86e1ddb4713"
         }
     },
-    "extract_to": "extract",
+    "installer": {
+        "args": "/S /D=$dir",
+        "keep": false
+    },
+    "uninstaller": {
+        "file": "uninstall.exe",
+        "args": "/S"
+    },
     "pre_install": [
         "Move-Item -Path \"$dir\\extract\\theseus_gui.exe\" -Destination \"$dir\\theseus_gui.exe\"",
         "Remove-Item -Path \"$dir\\extract\" -Recurse -Force",
